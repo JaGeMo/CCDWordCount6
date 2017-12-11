@@ -11,13 +11,14 @@ namespace WordCount
         
         public static int StringsCountFromList(List<string> in_List)
         {
-            int result = 0;
+            int counterItems = 0;
+
             foreach (string word in in_List)
             {
-                result++;
+                counterItems++;
             }
 
-            return result;
+            return counterItems;
         }
 
         public static int UniqueStringsCountFromList(List<string> in_List)
@@ -37,5 +38,24 @@ namespace WordCount
             return counterUniqueItems;
         }
 
+        public static double AverageNumberOfDigitsPerWord(List<string> in_List, int countedStrings)
+        {
+            int sumDigits = 0;
+
+            foreach (string word in in_List)
+            {
+                sumDigits += word.Length;
+            }
+
+            Console.WriteLine(sumDigits.ToString());
+            return (double)sumDigits / countedStrings;
+        }
+
+        public static Func<List<string>, int, double> FuncPointer = AverageNumberOfDigitsPerWord;
+
+        public static double ReturnAverage(Func<List<string>, int, double> func, List<string> in_List, int in_Int)
+        {
+            return func(in_List, in_Int);
+        }
     }
 }

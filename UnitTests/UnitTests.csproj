@@ -55,9 +55,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\WordCount\WordCount5.csproj">
+    <ProjectReference Include="..\WordCount\WordCount6.csproj">
       <Project>{d387f9b2-ebc5-4c0a-a7e3-45f3f3d2d864}</Project>
-      <Name>WordCount5</Name>
+      <Name>WordCount6</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />

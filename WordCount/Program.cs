@@ -11,7 +11,12 @@ namespace WordCount
         {
             var blackList = StopWords.ReadBlackListWords();
 
-            var inputString = UIInput.EnterInputString();
+            if (args.Length == 0)
+            {
+                args = new string[] { "" };
+            }
+
+            var inputString = UIInput.ProcessInput(args[0]);
 
             var splitList = Splitter.SplitString(inputString);
 
@@ -20,8 +25,12 @@ namespace WordCount
             var allWords = CountStrings.StringsCountFromList(cleansedList);
 
             var uniqueWords = CountStrings.UniqueStringsCountFromList(cleansedList);
-            
-            Console.WriteLine("number of words: " + allWords + ", unique: " + uniqueWords);
+
+            var averageDigitsPerWord = CountStrings.AverageNumberOfDigitsPerWord(cleansedList, allWords);
+
+            var testFuncPointer = CountStrings.ReturnAverage(CountStrings.FuncPointer, cleansedList, allWords);
+
+            Console.WriteLine("number of words: " + allWords + ", unique: " + uniqueWords + ", average word length: " + averageDigitsPerWord.ToString(CultureInfo.GetCultureInfo("en-GB")));
 
 #if DEBUG
             Console.Read();

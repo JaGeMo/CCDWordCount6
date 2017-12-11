@@ -12,5 +12,19 @@ namespace WordCount
             Console.WriteLine("please enter a string: ");
             return Console.ReadLine();
         }
+
+        public static string ProcessInput(string in_Arg)
+        {
+            if (in_Arg == "")
+            {
+                Console.WriteLine("enter new string to split: ");
+                return Console.ReadLine();
+            }
+            else
+            {
+                string[] tmpArray = File.ReadAllLines(in_Arg);
+                return string.Join(" ", tmpArray);
+            }
+        }
     }
 }
