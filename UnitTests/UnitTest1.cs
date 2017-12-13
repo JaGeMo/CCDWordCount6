@@ -7,10 +7,10 @@ using System.Collections.Generic;
 namespace UnitTests
 {
     [TestClass]
-    public class T_SplitString
+    public class T_WordCount
     {
         [TestMethod]
-        public void TestMethodSplit()
+        public void Splitter_SplitStrings()
         {
             // arrange
 

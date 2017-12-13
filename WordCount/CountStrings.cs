@@ -47,15 +47,15 @@ namespace WordCount
                 sumDigits += word.Length;
             }
 
-            Console.WriteLine(sumDigits.ToString());
+            //Console.WriteLine(sumDigits.ToString());
             return (double)sumDigits / countedStrings;
         }
-
-        public static Func<List<string>, int, double> FuncPointer = AverageNumberOfDigitsPerWord;
 
         public static double ReturnAverage(Func<List<string>, int, double> func, List<string> in_List, int in_Int)
         {
             return func(in_List, in_Int);
         }
+
+        public static Func<List<string>, int, double> FuncPointer = AverageNumberOfDigitsPerWord;
     }
 }
