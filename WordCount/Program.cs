@@ -29,7 +29,7 @@ namespace WordCount
             var averageDigitsPerWord = CountStrings.AverageNumberOfDigitsPerWord(cleansedList, allWords);
 
             var testFuncPointer = CountStrings.ReturnAverage(CountStrings.FuncPointer, cleansedList, allWords); // only for test purposes
-
+            // Kapseln
             Console.WriteLine("number of words: " + allWords + ", unique: " + uniqueWords + ", average word length: " + averageDigitsPerWord.ToString(CultureInfo.GetCultureInfo("en-GB")));
 
 #if DEBUG
